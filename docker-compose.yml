@@ -6,6 +6,7 @@ services:
       - ALLOW_EMPTY_PASSWORD=yes
       - MARIADB_USER=bn_moodle
       - MARIADB_DATABASE=bitnami_moodle
+      - MYSQL_CLIENT_DATABASE_PORT_NUMBER=3309
     volumes:
       - /home/moodle/mariadb:/bitnami/mariadb
   moodle:
