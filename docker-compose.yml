@@ -7,7 +7,7 @@ services:
       - MARIADB_USER=bn_moodle
       - MARIADB_DATABASE=bitnami_moodle
     volumes:
-      - /home/moodle/mariadb:mariadb_data:/bitnami/mariadb
+      - /home/moodle/mariadb:/bitnami/mariadb
   moodle:
     image: 'docker.io/bitnami/moodle:3-debian-10'
     ports:
