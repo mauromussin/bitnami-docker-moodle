@@ -227,6 +227,7 @@ Available environment variables:
 - `MOODLE_EMAIL`: Moodle application email. Default: **user@example.com**
 - `MOODLE_SITE_NAME`: Moodle site name. Default: **New Site**
 - `MOODLE_SKIP_BOOTSTRAP`: Do not initialize the Moodle database for a new deployment. This is necessary in case you use a database that already has Moodle data. Default: **no**
+- `MYSQL_TCP_PORT`: MariaDB port, in case standard port is unavaliable
 
 ##### Use an existing database
 
