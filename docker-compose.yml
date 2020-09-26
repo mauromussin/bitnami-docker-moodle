@@ -6,21 +6,25 @@ services:
       - ALLOW_EMPTY_PASSWORD=yes
       - MARIADB_USER=bn_moodle
       - MARIADB_DATABASE=bitnami_moodle
+      #- MARIADB_PORT_NUMBER=3307
+      - MYSQL_TCP_PORT=3307
     volumes:
-      - /home/moodle/mariadb:/bitnami/mariadb
+      # - c:/users/mauro/moodle/mariadb:/bitnami/mariadb
+       - 'mariadb_data:/bitnami/mariadb'
   moodle:
     image: 'docker.io/bitnami/moodle:3-debian-10'
     ports:
-      - '80:8080'
+      - '8090:8080'
       - '443:8443'
     environment:
       - MOODLE_DATABASE_HOST=mariadb
-      - MOODLE_DATABASE_PORT_NUMBER=3306
+      - MOODLE_DATABASE_PORT_NUMBER=3307
       - MOODLE_DATABASE_USER=bn_moodle
       - MOODLE_DATABASE_NAME=bitnami_moodle
       - ALLOW_EMPTY_PASSWORD=yes
     volumes:
-      - /home/moodle/moodle:/bitnami/moodle
+      - 'moodle_data:/bitnami/moodle'
+     # -  c:/users/mauro/moodle/moodle:/bitnami/moodle
       - 'moodledata_data:/bitnami/moodledata'
     depends_on:
       - mariadb
