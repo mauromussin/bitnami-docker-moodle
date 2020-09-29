@@ -1,7 +1,7 @@
 version: '2'
 services:
   mariadb:
-    image: 'docker.io/bitnami/mariadb:10.3-debian-10'
+    image: 'docker.io/mauromussin/mariadb:latest'
     environment:
       - ALLOW_EMPTY_PASSWORD=yes
       - MARIADB_USER=bn_moodle
@@ -12,7 +12,7 @@ services:
       # - c:/users/mauro/moodle/mariadb:/bitnami/mariadb
        - 'mariadb_data:/bitnami/mariadb'
   moodle:
-    image: 'docker.io/bitnami/moodle:3-debian-10'
+    image: 'docker.io/mauromussin/moodle:latest'
     ports:
       - '8090:8080'
       - '443:8443'
