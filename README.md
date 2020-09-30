@@ -1,3 +1,19 @@
+# Introduzione
+Il file di compose va messo a punto prima di lanciare il comando 'docker-compose up'.
+In particolare:
+1. vanno sistemati i volumi persistenti
+2. va fatto il chown della directory persistente
+- o -
+2. va inserito l'utente root nel compose in questo modo
+```
+version: '3'
+...
+image: <nome dell'immagine>
+user: root
+```
+3. vanno eliminati i volumi nel file di compose se non vengono usati
+4. nel caso di insuccesso cancellare sempre i volumi docker
+
 # Bitnami Docker Image for Moodle
 
 ## What is Moodle?
